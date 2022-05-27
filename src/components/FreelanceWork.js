@@ -1,22 +1,15 @@
 import { Button, TextField } from "@mui/material";
 import React, { useState } from "react";
-import getWeb3 from "../getWeb3";
 
 function FrelanceWork(props) {
     const [numberOfWeeks, setNumberOfWeeks] = useState(1);
     const [paymentPerWeek, setPaymentPerWeek] = useState(0);
 
-    console.log(props.web3);
-    // const setup = async () => {
-    //     const web3 = await getWeb3();
-    //     console.log("web3", web3);
-    //     web3.eth.getAccounts()
-    //     .then(accounts => console.log(accounts));
-    // };
-    // setup();
-
     const handleSubmit = () => {
         console.log("Number of weeks", numberOfWeeks);
+        console.log("Web3", props.web3)
+        props.web3.eth.getAccounts()
+        .then(accounts => console.log(accounts));
     };
     return (
         <div>
